@@ -12,6 +12,14 @@ import { BannerThreeComponent } from './layouts/banner-three/banner-three.compon
 import { ContactUsComponent } from './layouts/contact-us/contact-us.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { HeaderComponent } from './layouts/header/header.component';
+import { MobPartsComponent } from './products/mob-parts/mob-parts.component';
+import { BooksComponent } from './products/books/books.component';
+
+import { SqrtPipe } from './pipes/sqrt.pipe';
+import { PowerPipe } from './pipes/power.pipe';
+import { FirstDirective } from './directives/first.directive';
+import { SecondDirective } from './directives/second.directive';
+import { HostDirective } from './directives/host.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +31,14 @@ import { HeaderComponent } from './layouts/header/header.component';
     BannerThreeComponent,
     ContactUsComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    MobPartsComponent,
+    BooksComponent,
+    SqrtPipe,
+    PowerPipe,
+    FirstDirective,
+    SecondDirective,
+    HostDirective
   ],
   imports: [
     BrowserModule,

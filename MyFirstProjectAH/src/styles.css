@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+.card
+{
+  height: 490px;
+}
+
+.card .card-image img {
+  display: block;
+  border-radius: 2px 2px 0 0;
+  position: relative;
+  left: 50px;
+  right: 0;
+  top: 20px;
+  bottom: 0;
+  width: 200px;
+  height: 250px;
+}
