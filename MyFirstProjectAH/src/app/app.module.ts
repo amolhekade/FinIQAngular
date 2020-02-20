@@ -26,7 +26,6 @@ import { HostDirective } from "./directives/host.directive";
 
 @NgModule({
   declarations: [
-    CommonModule,
     AppComponent,
     NavComponent,
     BannerOneComponent,

@@ -98,7 +98,14 @@ export class MobPartsComponent implements OnInit {
     console.log(event.target.value);
   }
 
-  @Output() valueChange = new EventEmitter();
+  @Output()
+  private _valueChange = new EventEmitter();
+  public get valueChange() {
+    return this._valueChange;
+  }
+  public set valueChange(value) {
+    this._valueChange = value;
+  }
   counter = 1;
   valueChanged() {
     // You can give any function name
