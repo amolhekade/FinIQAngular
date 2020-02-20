@@ -1,0 +1,19 @@
+<!-- nav.component.html -->
+<nav class="white" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="#" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a [routerLink]="['/Home']">Home</a></li>
+      <li><a [routerLink]="['/Mobiles']">Mobiles</a></li>
+      <li><a [routerLink]="['/Books']">Books</a></li>
+    </ul>
+
+    <ul id="nav-mobile" class="sidenav">
+      <li><a [routerLink]="['/Home']">Home</a></li>
+      <li><a [routerLink]="['/Mobiles']">Mobiles</a></li>
+      <li><a [routerLink]="['/Books']">Books</a></li>
+    </ul>
+    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
+<!--/ nav.component.html -->

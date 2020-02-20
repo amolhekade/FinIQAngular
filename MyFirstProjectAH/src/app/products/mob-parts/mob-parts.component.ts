@@ -1,5 +1,5 @@
 import { MOBPARTS } from "./mob-data";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 import { MobParts } from "./mob-parts";
 
@@ -9,6 +9,7 @@ import { MobParts } from "./mob-parts";
   styles: []
 })
 export class MobPartsComponent implements OnInit {
+  @Input() prodNameFromParent: string;
   constructor() {
     console.log("constructor");
   }
@@ -82,7 +83,26 @@ export class MobPartsComponent implements OnInit {
     for (let mobPart of this.mobParts) {
       sum = sum + mobPart.inStock;
     }
-
     return sum;
+  }
+
+  IncreaseQuantity(mobPart) {
+    if (mobPart.quantity < mobPart.inStock) mobPart.quantity++;
+  }
+  DecreaseQuantity(mobPart) {
+    if (mobPart.quantity != 0) mobPart.quantity--;
+  }
+
+  CatchEvent(event) {
+    console.log(event);
+    console.log(event.target.value);
+  }
+
+  @Output() valueChange = new EventEmitter();
+  counter = 1;
+  valueChanged() {
+    // You can give any function name
+    this.counter = this.counter + 1;
+    this.valueChange.emit(this.counter);
   }
 }

@@ -1,8 +1,10 @@
 <div class="container">
   <div class="section">
     <div class="row">
-      <app-mob-parts></app-mob-parts>
-      <app-books></app-books>
+
+      <router-outlet></router-outlet>
+      <!-- <app-mob-parts (valueChange)='displayCounter($event)' [prodNameFromParent]="prodName"></app-mob-parts> -->
+      <!-- <app-books></app-books> -->
     </div>
   </div>
 </div>

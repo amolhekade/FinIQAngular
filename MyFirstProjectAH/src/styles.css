@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-.card
-{
+.card {
   height: 490px;
 }
 
@@ -13,5 +12,16 @@
   top: 20px;
   bottom: 0;
   width: 200px;
-  height: 250px;
+  height: 250px !important;
+}
+
+.mycolor {
+  background-color: coral;
+
+}
+
+.input {
+  width: 30px !important;
+  color: blue;
+  text-align: center;
 }
