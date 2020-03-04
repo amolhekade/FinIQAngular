@@ -16,8 +16,7 @@
 }
 
 .mycolor {
-  background-color: coral;
-
+  background-image: linear-gradient(to bottom right, hotpink, yellow);
 }
 
 .input {

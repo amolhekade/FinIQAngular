@@ -2,7 +2,7 @@ import { MobParts } from "./mob-parts";
 
 export const MOBPARTS: MobParts[] = [
   {
-    id: "S100",
+    id: "S000",
     name: "Samsung S10",
     made: "Samsung",
     inStock: 500,
@@ -41,18 +41,19 @@ export const MOBPARTS: MobParts[] = [
     imgpath: "./../assets/img/mob3.png", //Property binding
     //imgpath: "mob3.png",//interpolation binding
     quantity: 0
-  },
-  {
-    id: "H100",
-    name: "Honor 6.2 Plus",
-    made: "Houwai",
-    inStock: 10,
-    prodColor: "Green",
-    isOnline: true,
-    price: 1200,
-    country: "India",
-    imgpath: "./../assets/img/mob4.png", //Property binding
-    //imgpath: "mob4.png", //interpolation binding
-    quantity: 0
   }
+  // ,
+  // {
+  //   id: "H100",
+  //   name: "Honor 6.2 Plus",
+  //   made: "Houwai",
+  //   inStock: 10,
+  //   prodColor: "Green",
+  //   isOnline: true,
+  //   price: 1200,
+  //   country: "India",
+  //   imgpath: "./../assets/img/mob4.png", //Property binding
+  //   //imgpath: "mob4.png", //interpolation binding
+  //   quantity: 0
+  // }
 ];

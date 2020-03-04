@@ -1,0 +1,6 @@
+{
+  "/FinIQService": {
+    "target": "http://localhost:82",
+    "secure": "false"
+  }
+}

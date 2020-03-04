@@ -1,0 +1,17 @@
+<nav class="white" role="navigation">
+  <div class="nav-wrapper container">
+    <ul class="left hide-on-med-and-down">
+      <li><a [routerLink]="['/Mobiles/Moto']">Motorola</a></li>
+      <li><a [routerLink]="['/Mobiles/Nokia']">Nokia</a></li>
+      <li><a [routerLink]="['/Mobiles']">Mobiles</a></li>
+    </ul>
+    <ul id="nav-mobile" class="sidenav">
+      <li><a [routerLink]="['/Mobiles/Nokia']">Nokia</a></li>
+      <li><a [routerLink]="['/Mobiles/Moto']">Motorola</a></li>
+      <li><a [routerLink]="['/Mobiles']">Mobiles</a></li>
+    </ul>
+  </div>
+</nav>
+<div>
+  <router-outlet></router-outlet>
+</div>

@@ -4,6 +4,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
+import { HttpClientModule } from "@angular/common/http";
 
 import { NavComponent } from "./layouts/nav/nav.component";
 import { BannerOneComponent } from "./layouts/banner-one/banner-one.component";
@@ -23,6 +24,18 @@ import { PowerPipe } from "./pipes/power.pipe";
 import { FirstDirective } from "./directives/first.directive";
 import { SecondDirective } from "./directives/second.directive";
 import { HostDirective } from "./directives/host.directive";
+import { MotoComponent } from "./products/mob-parts/moto/moto.component";
+import { NokiaComponent } from "./products/mob-parts/nokia/nokia.component";
+import { MobileMenuComponent } from "./products/mob-parts/mobile-menu/mobile-menu.component";
+import { LoginComponent } from "./login/login.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { AuthGuard } from "./auth.guard";
+import { AgGridComponent } from "./ag-grid/ag-grid.component";
+
+import { AgGridModule } from "ag-grid-angular";
+import { ConnectionFileComponent } from "./connection-file/connection-file.component";
+import { ReactComponent } from "./forms/react/react.component";
+import { TempComponent } from "./forms/temp/temp.component";
 
 @NgModule({
   declarations: [
@@ -43,10 +56,25 @@ import { HostDirective } from "./directives/host.directive";
     SecondDirective,
     HostDirective,
     PageNotFoundComponent,
-    HomePageComponent
+    HomePageComponent,
+    MotoComponent,
+    NokiaComponent,
+    MobileMenuComponent,
+    LoginComponent,
+    DashboardComponent,
+    AgGridComponent,
+    ConnectionFileComponent,
+    ReactComponent,
+    TempComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    AgGridModule
+  ],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

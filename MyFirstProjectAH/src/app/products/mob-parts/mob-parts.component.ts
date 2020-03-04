@@ -2,6 +2,8 @@ import { MOBPARTS } from "./mob-data";
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 import { MobParts } from "./mob-parts";
+import { MobPartService } from "src/app/services/mob-part.service";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Component({
   selector: "app-mob-parts",
@@ -10,16 +12,38 @@ import { MobParts } from "./mob-parts";
 })
 export class MobPartsComponent implements OnInit {
   @Input() prodNameFromParent: string;
-  constructor() {
-    console.log("constructor");
-  }
+  headerOptions: any;
 
   mobParts: MobParts[];
+  mob: any;
+  constructor(
+    private mobPartService: MobPartService,
+    private http: HttpClient
+  ) {
+    console.log("we are in constructor .. for providers");
+  }
 
   ngOnInit() {
     console.log("ngOnInit");
-    this.mobParts = MOBPARTS;
+    //Data from mob-data.ts
+    //this.mobParts = MOBPARTS;
+
+    //Data from database or lage data
+    // let mobPartService = new MobPartService();
+    // this.mobParts = mobPartService.GetMobParts();
+
+    //Data from outside provider usio D.I. (Data injection)
+    this.mobPartService.GetMobParts().subscribe(data => {
+      console.log("Service calling");
+      this.mob = data;
+      console.log("My service data");
+      this.mobParts = this.mob;
+      console.log(this.mobParts);
+      console.log("End My service data");
+    });
+    console.log(this.mobParts);
   }
+
   ngOnChanges() {
     console.log("ngOnChanges");
   }
@@ -96,20 +120,5 @@ export class MobPartsComponent implements OnInit {
   CatchEvent(event) {
     console.log(event);
     console.log(event.target.value);
-  }
-
-  @Output()
-  private _valueChange = new EventEmitter();
-  public get valueChange() {
-    return this._valueChange;
-  }
-  public set valueChange(value) {
-    this._valueChange = value;
-  }
-  counter = 1;
-  valueChanged() {
-    // You can give any function name
-    this.counter = this.counter + 1;
-    this.valueChange.emit(this.counter);
   }
 }

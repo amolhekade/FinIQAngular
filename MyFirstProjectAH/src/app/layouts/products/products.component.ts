@@ -12,6 +12,6 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {}
   count: number;
   displayCounter(count) {
-    console.log("Outptut :", count);
+    alert(count);
   }
 }
